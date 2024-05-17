@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponzív</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            margin: 0px;
+        }
+
+        #nav{
+            position: relative;
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #nav a{
+            display: inline-block;
+            color: white;
+            background-color: #333;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        #nav a:hover{
+            background-color: lightgrey;
+            color: black;
+        }
+
+        #nav a.selected {
+            background-color: lightgreen;
+            color: black;
+        }
+
+        #nav #ham{
+            display: none;
+        }
+
+
+        #main{
+            width: 900px;
+            margin: 0px auto;
+            background-color: white;
+            border: solid 1px black;
+            padding: 10px;
+        }
+
+        #d1, #d2, #d3{
+            width: 33%;
+            border: solid 1px lightgrey;
+            text-align: center;
+            padding: 5px;
+        }
+
+        #row{
+            display: flex;
+            flex-direction: row;
+        }
+
+        #x{
+            display: flex;
+            flex-direction: row;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        #images{
+            display: flex;
+        }
+
+        /* - - - */
+
+        @media (max-width: 1200px){
+            body { background-color: cyan; }
+            #main { width: 90%; }
+    
+        }
+        
+        /* - - - */
+
+        @media (max-width: 900px){
+            body { background-color: skyblue; }
+            #nav #ham { display: inline-block; }
+            #nav #menu { display: none; } 
+            #nav #menu.show { display: block; position: absolute;}
+            #nav #menu.show a { display: block; }
+            #row { display: block; }
+            #d1, #d2, #d3 { width: 100%; }
+        }
+
+        
+    </style>
+
+    <script>
+
+        function menu(){
+            let m = document.getElementById("menu");
+            if (m.className == "") m.className = "show"; else m.className = "";
+        }
+    </script>
+</head>
+<body>
+    <div id="nav">
+        <a href="#" onclick="menu();" id="ham">&#9776;</a>
+        <div id="menu" class="">
+            <a href="#" class="selected">Kezdőlap</a>
+            <a href="#">Szabályok</a>
+            <a href="#">Játék1</a>
+            <a href="#">Játék2</a>
+            <a href="#">Játék3</a>
+            <a href="#">Játék4</a>
+            <a href="#nevjegy">Névjegy</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="row">
+            <div id="d1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusamus illum nemo voluptates est molestias eius! Modi neque fugiat accusamus, ut ullam, distinctio quod expedita et voluptatem aliquid, nemo magnam.</div>
+            <div id="d2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusamus illum nemo voluptates est molestias eius! Modi neque fugiat accusamus, ut ullam, distinctio quod expedita et voluptatem aliquid, nemo magnam.</div>
+            <div id="d3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam accusamus illum nemo voluptates est molestias eius! Modi neque fugiat accusamus, ut ullam, distinctio quod expedita et voluptatem aliquid, nemo magnam.</div>
+        </div>
+        <img src="sun.jpg">
+        <div id="images">
+            <img src="sun1.jpg">
+            <img src="sun1.jpg">
+            <img src="sun1.jpg">
+        </div>
+        <div id="images">
+            <img src="sun1.jpg">
+            <img src="sun1.jpg">
+            <img src="sun1.jpg">
+        </div>
+        <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta dolore eaque accusamus hic provident quisquam perferendis suscipit, numquam ullam praesentium sequi quas quis. Doloribus cum aliquam fugit dolor sapiente.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta dolore eaque accusamus hic provident quisquam perferendis suscipit, numquam ullam praesentium sequi quas quis. Doloribus cum aliquam fugit dolor sapiente.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta dolore eaque accusamus hic provident quisquam perferendis suscipit, numquam ullam praesentium sequi quas quis. Doloribus cum aliquam fugit dolor sapiente.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta dolore eaque accusamus hic provident quisquam perferendis suscipit, numquam ullam praesentium sequi quas quis. Doloribus cum aliquam fugit dolor sapiente.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum dicta dolore eaque accusamus hic provident quisquam perferendis suscipit, numquam ullam praesentium sequi quas quis. Doloribus cum aliquam fugit dolor sapiente.</p>
+        </div>
+        <a name="nevjegy"></a>
+        <div>
+            Készítette: 12/A, 2024.05.17
+        </div>
+    </div>
+    
+</body>
+</html>
